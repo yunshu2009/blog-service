@@ -8,7 +8,7 @@ require (
 	github.com/cncf/udpa/go v0.0.0-20200629203442-efcf912fb354 // indirect
 	github.com/envoyproxy/go-control-plane v0.9.6 // indirect
 	github.com/envoyproxy/protoc-gen-validate v0.4.0 // indirect
-	github.com/gin-gonic/gin v1.5.0 // indirect
+	github.com/gin-gonic/gin v1.5.0
 	github.com/go-playground/universal-translator v0.17.0 // indirect
 	github.com/google/gofuzz v1.1.0 // indirect
 	github.com/google/pprof v0.0.0-20200708004538-1a94d8640e99 // indirect
