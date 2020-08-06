@@ -30,7 +30,7 @@ type DatabaseSettingS struct {
 	MaxOpenConns int
 }
 
-func (s *String) ReadSection(k string, v interface{}) error {
+func (s *Setting) ReadSection(k string, v interface{}) error {
 	err := s.vp.UnmarshalKey(k, v)
 	if err != nil {
 		return err

@@ -6,7 +6,7 @@ type Setting struct {
 	vp *viper.Viper
 }
 
-func NewSetting(*Setting, error) {
+func NewSetting() (*Setting, error) {
 	vp := viper.New()
 	vp.SetConfigName("config")
 	vp.AddConfigPath("configs/")

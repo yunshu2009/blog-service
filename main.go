@@ -36,8 +36,8 @@ func setupSetting() error {
 	if err != nil {
 		return err
 	}
-	global.ServerSetting.ReadTimeOut *= time.Second
-	global.ServerSetting.WriteTimeOut *= time.Second
+	global.ServerSetting.ReadTimeout *= time.Second
+	global.ServerSetting.WriteTimeout *= time.Second
 
 	return nil
 }
@@ -47,8 +47,8 @@ func main() {
 	s := &http.Server{
 		Addr:           ":" + global.ServerSetting.HttpPort,
 		Handler:        router,
-		ReadTimeout:    global.ServerSetting.ReadTimeOut,
-		WriteTimeout:   global.ServerSetting.WriteTimeOut,
+		ReadTimeout:    global.ServerSetting.ReadTimeout,
+		WriteTimeout:   global.ServerSetting.WriteTimeout,
 		MaxHeaderBytes: 1 << 20,
 	}
 	s.ListenAndServe()
