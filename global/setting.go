@@ -6,5 +6,5 @@ import "github.com/yunshu2009/blog-service/pkg/setting"
 var (
 	ServerSetting   *setting.ServerSettingS
 	AppSetting      *setting.AppSettingS
-	DatabaseSetting *setting.ServerSettingS
+	DatabaseSetting *setting.DatabaseSettingS
 )
