@@ -17,6 +17,20 @@ func init() {
 	if err != nil {
 		log.Fatalf("init.setupSetting err:%v", err)
 	}
+	err := setupDBEngine()
+	if err != nil {
+		log.Fatalf("init.setupDBEngine err:%v", err)
+	}
+}
+
+func setupDBEngine() error {
+	var err error
+	global.DBEngine, err = model.NewDBEngine(global.DatabaseSetting)
+	if err != nil {
+		return err
+	}
+
+	return nil
 }
 
 func setupSetting() error {
