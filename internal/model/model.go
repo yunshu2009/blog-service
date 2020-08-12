@@ -5,6 +5,7 @@ import (
 	"time"
 
 	"github.com/jinzhu/gorm"
+	_ "github.com/jinzhu/gorm/dialects/mysql"
 	"github.com/yunshu2009/blog-service/global"
 	"github.com/yunshu2009/blog-service/pkg/setting"
 )
