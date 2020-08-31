@@ -7,6 +7,7 @@ import (
 
 	"github.com/gin-gonic/gin"
 	"github.com/yunshu2009/blog-service/global"
+	"github.com/yunshu2009/blog-service/internal/model"
 	"github.com/yunshu2009/blog-service/internal/routers"
 	"github.com/yunshu2009/blog-service/pkg/setting"
 )
@@ -17,7 +18,11 @@ func init() {
 	if err != nil {
 		log.Fatalf("init.setupSetting err:%v", err)
 	}
-	err := setupDBEngine()
+	err = setupLogger()
+	if err != nil {
+		log.Fatalf("init.setupLogger err:%v", err)
+	}
+	err = setupDBEngine()
 	if err != nil {
 		log.Fatalf("init.setupDBEngine err:%v", err)
 	}
@@ -30,6 +35,10 @@ func setupDBEngine() error {
 		return err
 	}
 
+	return nil
+}
+
+func setupLogger() error {
 	return nil
 }
 

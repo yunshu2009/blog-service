@@ -17,7 +17,7 @@ require (
 	github.com/google/gofuzz v1.1.0 // indirect
 	github.com/iancoleman/strcase v0.0.0-20191112232945-16388991a334 // indirect
 	github.com/ianlancetaylor/demangle v0.0.0-20200715173712-053cf528c12f // indirect
-	github.com/jinzhu/gorm v1.9.12 // indirect
+	github.com/jinzhu/gorm v1.9.12
 	github.com/jinzhu/now v1.1.1 // indirect
 	github.com/json-iterator/go v1.1.10 // indirect
 	github.com/leodido/go-urn v1.2.0 // indirect
