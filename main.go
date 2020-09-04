@@ -10,6 +10,8 @@ import (
 	"github.com/yunshu2009/blog-service/internal/model"
 	"github.com/yunshu2009/blog-service/internal/routers"
 	"github.com/yunshu2009/blog-service/pkg/setting"
+	"github.com/yunshu2009/blog-service/pkg/logger"
+	"gopkg.in/natefinch/lumberjack.v2"
 )
 
 // 在init在main之前执行
@@ -39,6 +41,14 @@ func setupDBEngine() error {
 }
 
 func setupLogger() error {
+	fileName := global.AppSetting.LogSavePath + "/" + global.AppSetting.LogFileName + global.AppSetting.LogFileExt
+	global.Logger = logger.NewLogger(&lumberjack.Logger{
+		Filename:  fileName,
+		MaxSize:   500,
+		MaxAge:    10,
+		LocalTime: true,
+	}, "", log.LstdFlags).WithCaller(2)
+
 	return nil
 }
 
@@ -67,6 +77,9 @@ func setupSetting() error {
 func main() {
 	gin.SetMode(global.ServerSetting.RunMode)
 	router := routers.NewRouter()
+
+	global.Logger.Infof("%s study golang", "yunshu2009")
+
 
 	s := &http.Server{
 		Addr:           ":" + global.ServerSetting.HttpPort,
