@@ -2,7 +2,7 @@ package app
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/yunshu2009/blog-service/globalconvert"
+	"github.com/yunshu2009/blog-service/global"
 	"github.com/yunshu2009/blog-service/pkg/convert"
 )
 
@@ -31,7 +31,11 @@ func GetPageSize(c *gin.Context) int {
 }
 
 func GetPageOffset(page, pageSize int) int {
-	// todo
+	result := 0
 
-	return 0
+	if page > 0 {
+		result = (page - 1) * pageSize
+	}
+
+	return result
 }
